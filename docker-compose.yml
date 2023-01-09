@@ -1,0 +1,13 @@
+version: '3'
+
+services: 
+  airflow:
+    build: airflow/
+    restart: always
+    container_name: airflow
+    ports:      
+      - '8080:8080'
+    env_file:
+      - flow.env
+    volumes:
+      - ./airflow/dags:/usr/local/airflow/dags
