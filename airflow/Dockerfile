@@ -1,7 +1,7 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 RUN apt-get update -y
-RUN apt-get install -y python3-pip python3-dev zsh curl git locales nano iputils-ping openjdk-8-jdk
+RUN apt-get install -y python3-pip python3.10-dev zsh curl git locales nano iputils-ping openjdk-8-jdk
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
